@@ -1,0 +1,71 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "9c940a61-ba4a-445b-858d-654f05dfcadc"
+        },
+        "name": {
+            "value": "sqlserver2019container"
+        },
+        "location": {
+            "value": "westeurope"
+        },
+        "environmentId": {
+            "value": "/subscriptions/9c940a61-ba4a-445b-858d-654f05dfcadc/resourceGroups/ARMTemplates/providers/Microsoft.App/managedEnvironments/sqlserverdemocontainerapp"
+        },
+        "containers": {
+            "value": [
+                {
+                    "name": "sqlserver2019container",
+                    "image": "mcr.microsoft.com/mssql/server:2019-latest",
+                    "command": [],
+                    "resources": {
+                        "cpu": "1",
+                        "memory": "2Gi"
+                    },
+                    "env": [
+                        {
+                            "name": "ACCEPT_EULA",
+                            "value": "Y"
+                        },
+                        {
+                            "name": "MSSQL_SA_PASSWORD",
+                            "value": "Password@12345#"
+                        }
+                    ]
+                }
+            ]
+        },
+        "registries": {
+            "value": []
+        },
+        "secrets": {
+            "value": {
+                "arrayValue": []
+            }
+        },
+        "ingress": {
+            "value": {
+                "external": true,
+                "transport": "Tcp",
+                "allowInsecure": false,
+                "targetPort": 1433,
+                "exposedPort": 1433,
+                "stickySessions": {
+                    "affinity": "none"
+                },
+                "additionalPortMappings": []
+            }
+        },
+        "environmentName": {
+            "value": "sqlserverdemocontainerapp"
+        },
+        "workspaceName": {
+            "value": "workspacearmtemplates9ec5"
+        },
+        "workspaceLocation": {
+            "value": "westeurope"
+        }
+    }
+}
