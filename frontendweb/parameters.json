@@ -1,0 +1,65 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "9c940a61-ba4a-445b-858d-654f05dfcadc"
+        },
+        "name": {
+            "value": "frontendsql"
+        },
+        "location": {
+            "value": "westeurope"
+        },
+        "environmentId": {
+            "value": "/subscriptions/9c940a61-ba4a-445b-858d-654f05dfcadc/resourceGroups/ARMTemplates/providers/Microsoft.App/managedEnvironments/sqlserverdemocontainerapp"
+        },
+        "containers": {
+            "value": [
+                {
+                    "name": "frontendsql",
+                    "image": "docker.io/samueladnan/web",
+                    "command": [],
+                    "resources": {
+                        "cpu": 0.5,
+                        "memory": "1Gi"
+                    },
+                    "env": [
+                        {
+                            "name": "DB_API_URL",
+                            "value": "sqlbackendapi--k3434frf.okokman-fh36s3242f.westeurope.azurecontainerapps.io"
+                        },
+                        {
+                            "name": "HTTP_PORT",
+                            "value": "443"
+                        },
+                        {
+                            "name": "ENVIRONMENT_FLAG",
+                            "value": "Production"
+                        },
+                        {
+                            "name": "ASPNETCORE_ENVIRONMENT",
+                            "value": "Development"
+                        }
+                    ]
+                }
+            ]
+        },
+        "secrets": {},
+        "registries": {
+            "value": []
+        },
+        "ingress": {
+            "value": {
+                "external": true,
+                "transport": "Auto",
+                "allowInsecure": false,
+                "targetPort": 80,
+                "stickySessions": {
+                    "affinity": "none"
+                },
+                "additionalPortMappings": []
+            }
+        }
+    }
+}
