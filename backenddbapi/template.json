@@ -1,0 +1,59 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "type": "String"
+        },
+        "name": {
+            "type": "String"
+        },
+        "location": {
+            "type": "String"
+        },
+        "environmentId": {
+            "type": "String"
+        },
+        "containers": {
+            "type": "Array"
+        },
+        "secrets": {
+            "defaultValue": {
+                "arrayValue": []
+            },
+            "type": "SecureObject"
+        },
+        "registries": {
+            "type": "Array"
+        },
+        "ingress": {
+            "type": "Object"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.App/containerapps",
+            "apiVersion": "2023-11-02-preview",
+            "name": "[parameters('name')]",
+            "location": "[parameters('location')]",
+            "dependsOn": [],
+            "kind": "containerapps",
+            "properties": {
+                "environmentId": "[parameters('environmentId')]",
+                "configuration": {
+                    "secrets": "[parameters('secrets').arrayValue]",
+                    "registries": "[parameters('registries')]",
+                    "activeRevisionsMode": "Single",
+                    "ingress": "[parameters('ingress')]"
+                },
+                "template": {
+                    "containers": "[parameters('containers')]",
+                    "scale": {
+                        "minReplicas": 0
+                    }
+                },
+                "workloadProfileName": "Consumption"
+            }
+        }
+    ]
+}
