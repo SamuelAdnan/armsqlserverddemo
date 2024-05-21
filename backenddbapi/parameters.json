@@ -12,7 +12,7 @@
             "value": "westeurope"
         },
         "environmentId": {
-            "value": "/subscriptions/9c940a61-ba4a-445b-858d-654f05dfcadc/resourceGroups/ARMTemplates/providers/Microsoft.App/managedEnvironments/containerappSQL"
+            "value": "/subscriptions/9c940a61-ba4a-445b-858d-654f05dfcadc/resourceGroups/ARMTemplates/providers/Microsoft.App/managedEnvironments/sqlserverdemocontainerapp"
         },
         "containers": {
             "value": [
