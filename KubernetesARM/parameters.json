@@ -1,0 +1,101 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "apiVersion": {
+            "value": "2023-10-01"
+        },
+        "resourceName": {
+            "value": "sqlaksdemo"
+        },
+        "location": {
+            "value": "westeurope"
+        },
+        "dnsPrefix": {
+            "value": "sqlaksdemo-dns"
+        },
+        "kubernetesVersion": {
+            "value": "1.28.9"
+        },
+        "networkPlugin": {
+            "value": "azure"
+        },
+        "enableRBAC": {
+            "value": true
+        },
+        "nodeResourceGroup": {
+            "value": ""
+        },
+        "clusterSku": {
+            "value": {
+                "name": "Base",
+                "tier": "Free"
+            }
+        },
+        "upgradeChannel": {
+            "value": "patch"
+        },
+        "clusterIdentity": {
+            "value": {
+                "type": "SystemAssigned"
+            }
+        },
+        "adminGroupObjectIDs": {
+            "value": []
+        },
+        "disableLocalAccounts": {
+            "value": false
+        },
+        "azureRbac": {
+            "value": false
+        },
+        "enableOmsAgent": {
+            "value": true
+        },
+        "isAvailabilityZoneEnabled": {
+            "value": true
+        },
+        "supportPlan": {
+            "value": "KubernetesOfficial"
+        },
+        "nodeOSUpgradeChannel": {
+            "value": "NodeImage"
+        },
+        "isPrivateClusterSupported": {
+            "value": true
+        },
+        "enablePrivateCluster": {
+            "value": false
+        },
+        "isAzurePolicySupported": {
+            "value": true
+        },
+        "enableAzurePolicy": {
+            "value": true
+        },
+        "isSecretStoreCSIDDriverSupported": {
+            "value": true
+        },
+        "enableSecretStoreCSIDriver": {
+            "value": false
+        },
+        "vmssNodePool": {
+            "value": true
+        },
+        "workspaceName": {
+            "value": "DefaultWorkspace-a45110d4-a8e5-4d3d-9324-9e302d45e2e4-WEU"
+        },
+        "workspaceRegion": {
+            "value": "westeurope"
+        },
+        "omsWorkspaceId": {
+            "value": "/subscriptions/a45110d4-a8e5-4d3d-9324-9e302d45e2e4/resourcegroups/DefaultResourceGroup-WEU/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-a45110d4-a8e5-4d3d-9324-9e302d45e2e4-WEU"
+        },
+        "clusterTags": {
+            "value": {}
+        },
+        "tagsForAllResources": {
+            "value": {}
+        }
+    }
+}
