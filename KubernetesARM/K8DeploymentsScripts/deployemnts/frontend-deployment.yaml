@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontendsql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontendsql
+  template:
+    metadata:
+      labels:
+        app: frontendsql
+    spec:
+      containers:
+      - image: samueladnan/web:v1
+        name: frontendsql
+        env:
+        - name: DB_API_URL
+          value: sqldbapi.centralus.cloudapp.azure.com
+        - name: HTTP_PORT
+          value: '80'
+        - name: ENVIRONMENT_FLAG
+          value: Development
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
+        ports:
+        - containerPort: 80

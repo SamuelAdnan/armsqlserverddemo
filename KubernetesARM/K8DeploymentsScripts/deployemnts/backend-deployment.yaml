@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dbapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dbapi
+  template:
+    metadata:
+      labels:
+        app: dbapi
+    spec:
+      containers:
+      - image: samueladnan/dbapi:latest
+        name: dbapi
+        env:
+        - name: DB_HOST
+          value: 172.170.52.4,1433
+        - name: DB_NAME
+          value: crmdb
+        - name: DB_SA_PASSWORD
+          value: Password@12345#
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
+        ports:
+        - containerPort: 80
