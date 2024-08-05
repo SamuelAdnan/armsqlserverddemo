@@ -1,4 +1,4 @@
-# Linkind Articles (Dockers/AppForContainers/Kubernetes)
+# My LinkedIn Articles (Dockers/AppForContainers/Kubernetes) 
 
 ## [Docker Compose - Microsoft SQL Server](https://www.linkedin.com/pulse/docker-compose-microsoft-sql-server-adnan-samuel-vbfwf/?trackingId=AoFatZkUSyup0ML9aFUbAg%3D%3D)
 
